@@ -13,10 +13,12 @@
 // "hello" -> "Hello"
 pub fn capitalize_first(input: &str) -> String {
     let mut c = input.chars();
-    match c.next() {
-        None => String::new(),
-        Some(first) => ???,
-    }
+    let head = match c.next() {
+        None => {return String::new();},
+        Some(first) =>  first.to_ascii_uppercase()
+    };
+    format!("{}{}",head, &input[1..])
+    
 }
 
 // Step 2.
